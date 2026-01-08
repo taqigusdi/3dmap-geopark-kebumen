@@ -1,0 +1,197 @@
+<!--Pemanggilan di HTML-->
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>Peta 3D Geopark Kebumen - Quality Tourism</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="./Qgis2threejs.css">
+        
+        <script src="./threejs/three.min.js"></script>
+        <script src="./threejs/OrbitControls.js"></script>
+        <script src="./threejs/ViewHelper.js"></script>
+        <script src="./Qgis2threejs.js"></script>
+</head>
+<body>
+    <div id="view">
+        <div id="northarrow"></div>
+        <div id="navigation"></div>
+    </div>
+
+    <div id="popup" style="display:none;">
+        <div id="closebtn">&times;</div>
+        <div id="popupbar"></div>
+        <div id="popupbody">
+            <div id="popupcontent"></div>
+            <div id="pageinfo">
+                <h1>Current View URL</h1>
+                <div><input id="urlbox" type="text"></div>
+                <h1>Usage</h1>
+                <div id="usage"></div>
+                <h1>About</h1>
+                <div id="about">This page was made with <a href="https://www.qgis.org/" target="_blank">QGIS</a> and <a href="https://github.com/minorua/Qgis2threejs" target="_blank">Qgis2threejs</a> plugin (version 2.7.3).</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./dashboard.js"></script>
+<script>
+        // --- A. PERSIAPAN PETA (Standar QGIS) ---
+        var container = document.getElementById("view"),
+            app = Q3D.application,
+            gui = Q3D.gui;
+
+        app.init(container); // Menyiapkan kanvas 3D
+
+        // --- B. MEMUAT SCENE & MENGAKTIFKAN KLIK MANUAL ---
+        // Kita membungkus semua logika di dalam callback ini agar aman
+        app.loadSceneFile("./data/index/scene.json", function (scene) {
+            
+            console.log("✅ Peta 3D Siap. Mengaktifkan sistem klik custom...");
+
+            // 1. DATABASE TESIS (Sesuaikan Nama & Angkanya)
+            // Kunci (kiri) adalah kata yang dicari di Nama Layer QGIS
+            const dataTesis = {
+                "Menganti": { skor: "3.75", kategori: "Tinggi", isu: "Daya Dukung Lingkungan", saran: "Batasi Kuota Pengunjung" },
+                "Karangsambung": { skor: "3.10", kategori: "Sedang", isu: "Fasilitas Dasar (Toilet)", saran: "Perbaikan Sanitasi" },
+                "Sempor": { skor: "3.40", kategori: "Sedang", isu: "Manajemen Sampah", saran: "Bank Sampah Terpadu" },
+                "Ayah": { skor: "2.90", kategori: "Rendah", isu: "Penataan Area Kumuh", saran: "Relokasi PKL & Zonasi" },
+                "Gombong": { skor: "3.25", kategori: "Sedang", isu: "Aksesibilitas Jalan", saran: "Pelebaran Akses Utama" },
+                "Jatijajar": { skor: "3.50", kategori: "Tinggi", isu: "Diversifikasi Atraksi", saran: "Tambah Paket Edukasi" }
+            };
+
+            // 2. PERSIAPAN ELEMEN POPUP
+            // Kita pakai div id="popup" yang sudah ada di index.html Anda
+            var popupEl = document.getElementById("popup");
+            var popupContent = document.getElementById("popupcontent");
+            var closeBtn = document.getElementById("closebtn");
+
+            // Fungsi tombol close
+            if (closeBtn) {
+                closeBtn.onclick = function() {
+                    popupEl.style.display = "none";
+                };
+            }
+
+            // 3. LOGIKA DETEKSI KLIK (RAYCASTER)
+            // Ini adalah teknik "menembak sinar laser" dari kamera ke mouse
+            var raycaster = new THREE.Raycaster();
+            var mouse = new THREE.Vector2();
+
+            // Tambahkan event listener KLIK pada layar
+            container.addEventListener('mousedown', onMouseDown, false);
+
+            function onMouseDown(event) {
+                // Hanya proses klik kiri (button 0)
+                if (event.button !== 0) return;
+
+                // Hitung posisi mouse di koordinat 3D (-1 s/d +1)
+                var rect = app.renderer.domElement.getBoundingClientRect();
+                mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+                mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
+                // Tembakkan sinar
+                raycaster.setFromCamera(mouse, app.camera);
+
+                // Cek objek apa yang kena tembak
+                // app.scene.children berisi semua objek (gunung, bangunan, dll)
+                var intersects = raycaster.intersectObjects(app.scene.children, true);
+
+                if (intersects.length > 0) {
+                    // Ambil objek paling depan
+                    var object = intersects[0].object;
+                    
+                    // Cari nama objek (kadang namanya ada di parent/group-nya)
+                    var targetName = "";
+                    var currentObj = object;
+                    while (currentObj) {
+                        if (currentObj.name && currentObj.name !== "") {
+                            targetName = currentObj.name;
+                            break;
+                        }
+                        currentObj = currentObj.parent;
+                    }
+
+                    console.log("🎯 Klik kena objek:", targetName);
+
+                    // 4. COCOKKAN DENGAN DATABASE TESIS
+                    if (targetName) {
+                        let dataFound = null;
+                        
+                        // Loop database untuk mencari kecocokan kata
+                        for (const [key, data] of Object.entries(dataTesis)) {
+                            if (targetName.toLowerCase().includes(key.toLowerCase())) {
+                                dataFound = data;
+                                break;
+                            }
+                        }
+
+                        // 5. JIKA DATA KETEMU, TAMPILKAN POPUP
+                        if (dataFound) {
+                            // Isi HTML Popup
+                            popupContent.innerHTML = `
+                                <div style="font-family: 'Segoe UI', sans-serif; min-width: 250px;">
+                                    <div style="border-bottom: 2px solid #27ae60; padding-bottom: 5px; margin-bottom: 10px;">
+                                        <h3 style="margin: 0; color: #2c3e50; font-size: 16px;">📍 ${targetName}</h3>
+                                        <small style="color: #7f8c8d;">Lokasi Sampel Penelitian</small>
+                                    </div>
+                                    
+                                    <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+                                        <tr style="background: #f8f9fa;">
+                                            <td style="padding: 5px; font-weight: bold;">Indeks Komposit:</td>
+                                            <td style="text-align: right;">
+                                                <span style="background: #f1c40f; color: #000; padding: 2px 6px; border-radius: 4px; font-weight: bold;">${dataFound.skor}</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding: 5px; font-weight: bold;">Kategori:</td>
+                                            <td style="text-align: right;">${dataFound.kategori}</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="padding: 8px 0 2px 0; font-weight: bold; color: #e74c3c;">⚠️ Isu Prioritas:</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="padding-bottom: 8px; border-bottom: 1px dashed #ddd;">
+                                                ${dataFound.isu}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="padding: 8px 0 2px 0; font-weight: bold; color: #27ae60;">💡 Rekomendasi:</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="font-style: italic; color: #555;">
+                                                "${dataFound.saran}"
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            `;
+
+                            // Munculkan Kotak Popup
+                            popupEl.style.display = "block";
+                            
+                            // Posisikan di dekat mouse (sedikit digeser biar gak ketutup jari)
+                            // Kita batasi agar tidak keluar layar kanan/bawah
+                            var posX = event.clientX + 20;
+                            var posY = event.clientY + 20;
+                            
+                            popupEl.style.left = posX + "px";
+                            popupEl.style.top = posY + "px";
+
+                        } else {
+                            // Jika klik objek tapi bukan lokasi tesis, sembunyikan popup (opsional)
+                            // popupEl.style.display = "none";
+                        }
+                    }
+                } else {
+                    // Jika klik ruang kosong (langit), sembunyikan popup
+                    popupEl.style.display = "none";
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>

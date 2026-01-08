@@ -1,0 +1,58 @@
+<!--Pemanggilan di HTML-->
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>Peta 3D Geopark Kebumen - Quality Tourism</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" type="text/css" href="./Qgis2threejs.css">
+        
+        <script src="./threejs/three.min.js"></script>
+        <script src="./threejs/OrbitControls.js"></script>
+        <script src="./threejs/ViewHelper.js"></script>
+        <script src="./Qgis2threejs.js"></script>
+</head>
+<body>
+    <div id="view">
+        <div id="northarrow"></div>
+        <div id="navigation"></div>
+    </div>
+
+    <div id="popup" style="display:none;">
+        <div id="closebtn">&times;</div>
+        <div id="popupbar"></div>
+        <div id="popupbody">
+            <div id="popupcontent"></div>
+            <div id="pageinfo">
+                <h1>Current View URL</h1>
+                <div><input id="urlbox" type="text"></div>
+                <h1>Usage</h1>
+                <div id="usage"></div>
+                <h1>About</h1>
+                <div id="about">This page was made with <a href="https://www.qgis.org/" target="_blank">QGIS</a> and <a href="https://github.com/minorua/Qgis2threejs" target="_blank">Qgis2threejs</a> plugin (version 2.7.3).</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./dashboard.js"></script>
+    <script>
+        // Sekarang Q3D sudah dikenali karena library di atas sudah dimuat
+        var container = document.getElementById("view"),
+            app = Q3D.application,
+            gui = Q3D.gui;
+
+        app.init(container); // Menyiapkan wadah
+
+        // Memuat Scene (Data Peta)
+        // Pastikan file scene.json atau scene.js ada di folder data/index/
+        app.loadSceneFile("./data/index/scene.json", function (scene) {
+            // Berhasil dimuat
+            app.start();
+        }, function (scene) {
+            // Proses loading selesai
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+    <script>
+        // Sekarang Q3D sudah dikenali karena library di atas sudah dimuat
+        var container = document.getElementById("view"),
+            app = Q3D.application,
+            gui = Q3D.gui;
+
+        app.init(container); // Menyiapkan wadah
+
+        // Memuat Scene (Data Peta)
+        // Pastikan file scene.json atau scene.js ada di folder data/index/
+        app.loadSceneFile("./data/index/scene.json", function (scene) {
+            // Berhasil dimuat
+            app.start();
+        }, function (scene) {
+            // Proses loading selesai
+        });
+    </script>

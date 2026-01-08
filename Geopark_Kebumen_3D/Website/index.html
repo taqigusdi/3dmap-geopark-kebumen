@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Peta 3D Geopark Kebumen - Quality Tourism</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./Qgis2threejs.css">
+    
+    <script src="./threejs/three.min.js"></script>
+    <script src="./threejs/OrbitControls.js"></script>
+    <script src="./threejs/ViewHelper.js"></script>
+    <script src="./Qgis2threejs.js"></script>
+    
+    <script src="./dashboard.js"></script>
+    <script src="./data-tesis.js"></script> </head>
+<body>
+
+    <div class="navbar-overlay">
+        <a href="index.html" class="navbar-btn" style="background:#fff; color:#333;">🏠 Home</a>
+        <a href="siteplan.html" class="navbar-btn">🏗️ Site Plan</a>
+    </div>
+
+    <div id="view"><div id="northarrow"></div><div id="navigation"></div></div>
+
+    <div id="progressbar" style="display:none;"></div>
+    <div id="popup" style="display:none;"><div id="popupbody"><div id="popupcontent"></div></div></div>
+
+    <div id="my-custom-popup"></div>
+
+    <script>
+        var container = document.getElementById("view"),
+            app = Q3D.application,
+            gui = Q3D.gui;
+
+        app.init(container);
+        
+        // Matikan klik bawaan agar tidak bentrok
+        app.canvasClicked = function(e) { return; };
+
+        // Load Scene
+        app.loadSceneFile("./data/index/scene.json", function (scene) {
+            console.log("✅ Peta Siap.");
+            
+            // PANGGIL FUNGSI DARI FILE data-tesis.js
+            initCustomInteractions(app, container);
+        });
+    </script>
+</body>
+</html>
