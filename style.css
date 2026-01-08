@@ -297,4 +297,41 @@
     }
 }
 
+/* --- TAMPILAN KHUSUS HP (MEDIA QUERY UPDATE) --- */
+@media only screen and (max-width: 600px) {
+    
+    /* 1. Posisi Tombol Info */
+    .dashboard-toggle {
+        top: 70px; 
+        left: 15px;
+    }
+
+    /* 2. Posisi Panel Dashboard (MODIFIKASI) */
+    .smart-panel {
+        /* Matikan posisi tengah yang lama */
+        transform: none; 
+        
+        /* Atur agar memenuhi lebar bawah (kiri kanan ada celah dikit) */
+        left: 10px;
+        right: 10px;
+        width: auto; /* Lebar otomatis mengikuti margin kiri-kanan */
+        
+        /* Pindahkan ke BAWAH layar (Seperti Google Maps) */
+        top: auto;  /* Abaikan posisi atas */
+        bottom: 20px; /* Jarak 20px dari bawah layar */
+        
+        /* Batasi tinggi agar tidak menutupi seluruh peta */
+        max-height: 50vh; /* Maksimal setengah layar HP */
+        
+        /* Styling tambahan agar terlihat seperti kartu */
+        border-radius: 15px;
+        padding: 15px;
+    }
+
+    /* Kecilkan font sedikit untuk HP */
+    .panel-header h2 { font-size: 14px; }
+    .legend-item span { font-size: 11px; }
+    .panel-desc { display: none; } /* Sembunyikan deskripsi panjang di HP */
+}
+
 
