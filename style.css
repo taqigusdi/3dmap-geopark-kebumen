@@ -281,59 +281,61 @@
     padding-right: 5px; /* Spasi scrollbar */
 }
 
-/* --- TAMPILAN KHUSUS HP (MEDIA QUERY UPDATE) --- */
-@media only screen and (max-width: 600px) {
-    .dashboard-toggle {
-        top: 60px; /* Sesuaikan posisi tombol di HP */
-        left: 10px;
-    }
-
-    .smart-panel {
-        /* Di HP panel jadi di tengah */
-        width: 85%;       /* Lebar 85% layar */
-        left: 50%;        /* Trik centering */
-        transform: translateX(-50%); /* Trik centering */
-        top: 15%;         /* Jarak dari atas */
-        max-height: 70vh; /* Jangan terlalu tinggi */
-    }
-}
-
-/* --- TAMPILAN KHUSUS HP (MEDIA QUERY UPDATE) --- */
+/* ========================================================== */
+/* PERBAIKAN FINAL: TAMPILAN KHUSUS HP (MOBILE RESPONSIVE)    */
+/* ========================================================== */
 @media only screen and (max-width: 600px) {
     
-    /* 1. Posisi Tombol Info */
+    /* 1. Posisi Tombol Info (Ikon i) */
     .dashboard-toggle {
         top: 70px; 
         left: 15px;
     }
 
-    /* 2. Posisi Panel Dashboard (MODIFIKASI) */
+    /* 2. Posisi Panel Dashboard (MODEL LACI BAWAH) */
     .smart-panel {
-        /* Matikan posisi tengah yang lama */
-        transform: none; 
+        /* Reset semua posisi paksa sebelumnya */
+        position: fixed; /* Gunakan fixed agar menempel di layar HP */
+        top: auto !important;    /* Jangan nempel di atas */
+        left: 15px !important;   /* Jarak dari kiri */
+        right: 15px !important;  /* Jarak dari kanan */
+        bottom: 25px !important; /* Jarak dari bawah */
         
-        /* Atur agar memenuhi lebar bawah (kiri kanan ada celah dikit) */
-        left: 10px;
-        right: 10px;
-        width: auto; /* Lebar otomatis mengikuti margin kiri-kanan */
+        /* Reset Lebar & Transformasi */
+        width: auto !important;  /* Lebar menyesuaikan kiri-kanan */
+        transform: none !important; /* Matikan efek centering paksa */
         
-        /* Pindahkan ke BAWAH layar (Seperti Google Maps) */
-        top: auto;  /* Abaikan posisi atas */
-        bottom: 20px; /* Jarak 20px dari bawah layar */
-        
-        /* Batasi tinggi agar tidak menutupi seluruh peta */
-        max-height: 50vh; /* Maksimal setengah layar HP */
-        
-        /* Styling tambahan agar terlihat seperti kartu */
+        /* Styling agar rapi */
+        max-height: 45vh; /* Tinggi maksimal 45% layar */
         border-radius: 15px;
         padding: 15px;
+        z-index: 99999;
     }
 
-    /* Kecilkan font sedikit untuk HP */
-    .panel-header h2 { font-size: 14px; }
-    .legend-item span { font-size: 11px; }
-    .panel-desc { display: none; } /* Sembunyikan deskripsi panjang di HP */
+    /* 3. Penyesuaian Font di HP */
+    .panel-header h2 { 
+        font-size: 16px; 
+    }
+    
+    .panel-desc { 
+        display: none; /* Sembunyikan deskripsi panjang agar hemat tempat */
+    }
+    
+    .legend-item span { 
+        font-size: 12px; 
+    }
+    
+    .panel-footer {
+        font-size: 9px;
+        margin-top: 10px;
+    }
+
+    /* 4. Perbaikan Pop-up Data (Jika diklik objek) */
+    #my-custom-popup {
+        /* Pastikan popup data juga di tengah bawah */
+        left: 5% !important;
+        width: 90% !important;
+        top: auto !important;
+        bottom: 20px !important;
+    }
 }
-
-
-
