@@ -39,18 +39,6 @@ window.addEventListener('load', function() {
                     <span style="width: 12px; height: 12px; background-color: #f1c4bf; margin-right: 10px;"></span>
                     <span>Pariwisata Pedesaan</span>
                 </div>
-                <div class="legend-item">
-                    <span style="width: 12px; height: 12px; background-color: #e5b636; margin-right: 10px;"></span>
-                    <span>Kawasan Geosite</span>
-                </div>
-                <div class="legend-item">
-                    <span style="width: 12px; height: 12px; background-color: #84b7e1; margin-right: 10px;"></span>
-                    <span>Badan Air (Embung/Sungai)</span>
-                </div>
-                 <div class="legend-item">
-                    <span style="width: 12px; height: 12px; background-color: #e04548; margin-right: 10px;"></span>
-                    <span>Jalan Arteri/Kolektor</span>
-                </div>
             </div>
             
             <div style="margin-top:15px; font-size:11px; color:#666; text-align:center;">
@@ -84,3 +72,4 @@ window.addEventListener('load', function() {
         toggleBtn.style.display = 'none';
     }
 });
+
