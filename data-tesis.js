@@ -4,64 +4,74 @@
 // --- 1. DATA TESIS (EDIT DATA DI SINI) ---
 const DESTINATIONS = [
 { name: "Pantai Kembar", x: -12390.62, y: -10281.87, 
-    nilai: "43,35%", kategori: "Sedang", isu: "Abrasi & Sampah Laut", saran: "Pembangunan Breakwater Alami", 
+    nilai: "43,35%", kategori: "Sedang", isu: "Manajemen Limbah & Eksklusivitas", saran: "Sistem pengolahan limbah mandiri & Penyediaan aksesibilitas inklusif", 
     images: [
-            "https://placehold.co/400x300/27ae60/white?text=Pantai+Kembar+1",
-            "https://placehold.co/400x300/2980b9/white?text=Pantai+Kembar+2"
+            "./img/Pantai Kembar 1.jpg",
+            "./img/Pantai Kembar 2.jpg",
+            "./img/Pantai Kembar 3.jpg",
         ]},
 { name: "Sagara View of Karangbolong", x: -15634.81, y: -10008.37, 
-    nilai: "52,92%", kategori: "Sedang", isu: "Kemacetan Akses Masuk", saran: "Manajemen Kantong Parkir", 
+    nilai: "52,92%", kategori: "Sedang", isu: "Komodifikasi Alam, Perlindungan Aset & Eksklusivitas", saran: "Diversifikasi aktivitas & Menyisihkan pendapatan untuk konservasi", 
     images: [
-            "https://placehold.co/400x300/27ae60/white?text=Pantai+Kembar+1",
-            "https://placehold.co/400x300/2980b9/white?text=Pantai+Kembar+2"
+            "./img/Sagara View 1.jpg",
+            "./img/Sagara View 2.jpg",
+            "./img/Sagara View 3.jpg",
         ]},
 { name: "Pantai Menganti", x: -21501.73, y: -11325.52, 
-    nilai: "55,29%", kategori: "Sedang", isu: "Daya Dukung Lingkungan", saran: "Pembatasan Kuota Pengunjung",
+    nilai: "55,29%", kategori: "Sedang", isu: "Manajemen Autopilot, Eksklusivitas & Lingkungan", saran: "SOP pengelolaan lingkungan yang ketat & Infrastruktur ramah lansia/difabel",
 images: [
-            "https://placehold.co/400x300/27ae60/white?text=Pantai+Kembar+1",
-            "https://placehold.co/400x300/2980b9/white?text=Pantai+Kembar+2"
+            "./img/Pantai Menganti 1.jpg",
+            "./img/Pantai Menganti 2.jpg",
+            "./img/Pantai Menganti 3.jpg",
         ]},
 { name: "Hutan Mangrove Pantai Ayah", x: -23884.69, y: -5698.66, 
-    nilai: "40,39%", kategori: "Sedang", isu: "Sedimentasi & Fasilitas", saran: "Revitalisasi Jalur Trekking", 
+    nilai: "40,39%", kategori: "Sedang", isu: "Fasilitas", saran: "Mempertahankan model proteksi aset & Penguatan interpretasi", 
     images: [
-            "https://placehold.co/400x300/27ae60/white?text=Pantai+Kembar+1",
-            "https://placehold.co/400x300/2980b9/white?text=Pantai+Kembar+2"
+            "./img/Hutan Mangrove 1.jpg",
+            "./img/Hutan Mangrove 2.jpg",
+            "./img/Hutan Mangrove 3.jpg",
         ]},
 { name: "Kerajinan Pandan KTH Margo Rahayu", x: -7496.88, y: 8005.30, 
-    nilai: "42,26%", kategori: "Sedang", isu: "Regenerasi Pengrajin", saran: "Pelatihan & Pemasaran Digital", 
+    nilai: "42,26%", kategori: "Sedang", isu: "Visibilitas & Regenerasi", saran: "Integrasi paket wisata edukasi & Digitalisasi", 
 images: [
-            "https://placehold.co/400x300/27ae60/white?text=Pantai+Kembar+1",
-            "https://placehold.co/400x300/2980b9/white?text=Pantai+Kembar+2"
+            "./img/Kerajinan Pandan 1.jpg",
+            "./img/Kerajinan Pandan 2.jpg",
+            "./img/Kerajinan Pandan 3.jpg",
         ]},
 { name: "Sanggar Batik Gemeksekti", x: 5574.07, y: 1677.00, 
-    nilai: "38,69%", kategori: "Rendah", isu: "Keterbatasan Showroom", saran: "Integrasi Paket Wisata Kota", 
+    nilai: "38,69%", kategori: "Rendah", isu: "Kualitas Terendah & Aksesibilitas", saran: "Perbaikan aksesibilitas & Pembuatan paket wisata", 
 images: [
-            "https://placehold.co/400x300/27ae60/white?text=Pantai+Kembar+1",
-            "https://placehold.co/400x300/2980b9/white?text=Pantai+Kembar+2"
+            "./img/Sanggar Batik 1.jpg",
+            "./img/Sanggar Batik 2.jpg",
+            "./img/Sanggar Batik 3.jpg",
         ]},
-{ name: "Pariwisata Pedesaan Desa Seboro 'Selo Asri'", x: 11237.29, y: 17001.15, 
-    nilai: "41,66%", kategori: "Sedang", isu: "Aksesibilitas Jalan Sempit", saran: "Pelebaran Jalan Last Mile", 
+{ name: "Desa Seboro 'Selo Asri'", x: 11237.29, y: 17001.15, 
+    nilai: "41,66%", kategori: "Sedang", isu: "Perlindungan Aset & Eksklusivitas", saran: "Aturan melindungi situs geologi & Penyediaan amenitas", 
 images: [
-            "https://placehold.co/400x300/27ae60/white?text=Pantai+Kembar+1",
-            "https://placehold.co/400x300/2980b9/white?text=Pantai+Kembar+2"
+            "./img/Seboro 1.jpeg",
+            "./img/Seboro 2.jpg",
+            "./img/Seboro 3.jpg",
         ]},
-{ name: "Pariwisata Pedesaan Agro Wisata Embung Cangkring", x: 16572.57, y: 17507.11, 
-    nilai: "42,48%", kategori: "Sedang", isu: "Minim Atraksi Malam", saran: "Penambahan Lampu & Event", 
+{ name: "Agro Wisata Embung Cangkring", x: 16572.57, y: 17507.11, 
+    nilai: "42,48%", kategori: "Sedang", isu: "Infrastruktur & Kelembagaan", saran: "Pengembangan fasilitas penunjang & Penguatan kelembagaan", 
 images: [
-            "https://placehold.co/400x300/27ae60/white?text=Pantai+Kembar+1",
-            "https://placehold.co/400x300/2980b9/white?text=Pantai+Kembar+2"
+            "./img/Cangkring 1.webp",
+            "./img/Cangkring 2.jpg",
+            "./img/Cangkring 3.jpg",
         ]},
-{ name: "Pariwisata Pedesaan Desa Karanggayam", x: -3264.14, y: 8018.13, 
-    nilai: "38,77%", kategori: "Rendah", isu: "Fasilitas Sanitasi", saran: "Standarisasi Toilet Wisata", 
+{ name: "Desa Karanggayam", x: -3264.14, y: 8018.13, 
+    nilai: "38,77%", kategori: "Rendah", isu: "Paradoks Kualitas, Fasilitas Dasar & Aset", saran: "Perbaikan jalan akses & Formalisasi aturan konservasi budaya", 
 images: [
-            "https://placehold.co/400x300/27ae60/white?text=Pantai+Kembar+1",
-            "https://placehold.co/400x300/2980b9/white?text=Pantai+Kembar+2"
+            "./img/Karanggayam 1.jpg",
+            "./img/Karanggayam 2.jpg",
+            "./img/Karanggayam 3.jpg",
         ]},
-{ name: "Pariwisata Pedesaan Desa Rahayu", x: 18316.36, y: 4365.18, 
-    nilai: "41,93%", kategori: "Sedang", isu: "Promosi Belum Optimal", saran: "Branding Desa Wisata Digital", 
+{ name: "Desa Rahayu", x: 18316.36, y: 4365.18, 
+    nilai: "41,93%", kategori: "Sedang", isu: "Aksesibilitas & Modal sosial gotong royong (Positif).", saran: "Peningkatan infrastruktur & Replikasi model bank sampah", 
 images: [
-            "https://placehold.co/400x300/27ae60/white?text=Pantai+Kembar+1",
-            "https://placehold.co/400x300/2980b9/white?text=Pantai+Kembar+2"
+            "./img/Rahayu 1.jpg",
+            "./img/Rahayu 2.jpg",
+            "./img/Rahayu 3.jpeg",
         ]}
 ];
 
@@ -69,11 +79,19 @@ const CLICK_RADIUS = 1000;
 
 // --- 2. FUNGSI UTAMA INTERAKSI ---
 function initCustomInteractions(app, container) {
-    console.log("✅ Sistem Interaksi + Carousel Aktif");
+    console.log("✅ Sistem Interaksi + Auto Carousel Aktif");
 
     var raycaster = new THREE.Raycaster();
     var mouse = new THREE.Vector2();
     var popupEl = document.getElementById("my-custom-popup");
+    
+    // Variabel Penyimpan Timer Auto-Slide
+    let slideTimer = null; 
+
+    // --- PROTEKSI KLIK (Agar popup tidak hilang saat diklik) ---
+    popupEl.addEventListener('mousedown', function(e) { e.stopPropagation(); }, false);
+    popupEl.addEventListener('touchstart', function(e) { e.stopPropagation(); }, {passive: false});
+    popupEl.addEventListener('click', function(e) { e.stopPropagation(); }, false);
 
     function handleInput(clientX, clientY) {
         var rect = app.renderer.domElement.getBoundingClientRect();
@@ -82,6 +100,12 @@ function initCustomInteractions(app, container) {
 
         raycaster.setFromCamera(mouse, app.camera);
         var intersects = raycaster.intersectObjects(app.scene.children, true);
+
+        // Jika klik sembarang tempat, matikan timer lama dulu
+        if (slideTimer) {
+            clearInterval(slideTimer);
+            slideTimer = null;
+        }
 
         if (intersects.length > 0) {
             var hitPoint = intersects[0].point;
@@ -99,15 +123,13 @@ function initCustomInteractions(app, container) {
             }
 
             if (nearestLoc) {
-                // 1. SIAPKAN HTML GAMBAR (CAROUSEL)
+                // 1. SIAPKAN HTML GAMBAR
                 let carouselHTML = '';
-                // Jika ada gambar, buat struktur carousel
                 if (nearestLoc.images && nearestLoc.images.length > 0) {
                     let slides = nearestLoc.images.map((img, index) => 
                         `<img src="${img}" class="carousel-slide ${index === 0 ? 'active' : ''}">`
                     ).join('');
                     
-                    // Tambahkan tombol navigasi jika gambar lebih dari 1
                     let navButtons = nearestLoc.images.length > 1 ? 
                         `<button class="carousel-btn prev-btn">❮</button>
                          <button class="carousel-btn next-btn">❯</button>` : '';
@@ -127,7 +149,8 @@ function initCustomInteractions(app, container) {
                         <small>Geopark Kebumen</small>
                     </div>
                     <div class="popup-body">
-                        ${carouselHTML} <div class="data-row"><span class="data-label">Indeks:</span><span class="score-badge">${nearestLoc.nilai}</span></div>
+                        ${carouselHTML}
+                        <div class="data-row"><span class="data-label">Indeks:</span><span class="score-badge">${nearestLoc.nilai}</span></div>
                         <div class="data-row"><span class="data-label">Kategori:</span><span class="data-value">${nearestLoc.kategori}</span></div>
                         <div class="issue-box"><div style="font-size:10px; color:#555;">⚠️ ISU UTAMA:</div><div class="issue-text">${nearestLoc.isu}</div></div>
                         <div style="margin-top:10px; border-top:1px dashed #ddd; padding-top:8px;">
@@ -138,14 +161,14 @@ function initCustomInteractions(app, container) {
                 `;
                 popupEl.style.display = "block";
 
-                // 3. LOGIKA CAROUSEL (JS)
-                // Kita jalankan setelah HTML terbentuk
+                // 3. LOGIKA CAROUSEL (AUTO + MANUAL)
                 if (nearestLoc.images && nearestLoc.images.length > 1) {
                     let currentIndex = 0;
                     const slides = popupEl.querySelectorAll('.carousel-slide');
                     const btnPrev = popupEl.querySelector('.prev-btn');
                     const btnNext = popupEl.querySelector('.next-btn');
 
+                    // Fungsi Ganti Slide
                     function showSlide(index) {
                         slides.forEach((slide, i) => {
                             slide.classList.remove('active');
@@ -153,20 +176,34 @@ function initCustomInteractions(app, container) {
                         });
                     }
 
-                    btnNext.addEventListener('click', (e) => {
-                        e.stopPropagation(); // Biar klik tombol gak tembus ke peta
+                    // Fungsi Next (Bisa dipanggil Timer atau Tombol)
+                    function nextSlideFunc() {
                         currentIndex = (currentIndex + 1) % slides.length;
                         showSlide(currentIndex);
+                    }
+
+                    // A. SET INTERVAL AUTO SLIDE (3 Detik)
+                    slideTimer = setInterval(nextSlideFunc, 5000);
+
+                    // B. EVENT TOMBOL MANUAL
+                    btnNext.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        // Reset timer biar gak balapan
+                        clearInterval(slideTimer); 
+                        nextSlideFunc();
+                        slideTimer = setInterval(nextSlideFunc, 3000); // Mulai lagi
                     });
 
                     btnPrev.addEventListener('click', (e) => {
                         e.stopPropagation();
+                        clearInterval(slideTimer);
                         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
                         showSlide(currentIndex);
+                        slideTimer = setInterval(nextSlideFunc, 3000);
                     });
                 }
 
-                // 4. POSISI POPUP
+                // 4. POSISI POPUP RESPONSIF
                 let leftPos = clientX + 20;
                 let topPos = clientY + 20;
 
@@ -181,6 +218,7 @@ function initCustomInteractions(app, container) {
                     popupEl.style.bottom = "auto";
                     popupEl.style.width = "auto";
                 }
+
             } else {
                 popupEl.style.display = "none";
             }
