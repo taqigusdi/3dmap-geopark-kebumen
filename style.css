@@ -296,10 +296,10 @@
     .smart-panel {
         /* Reset semua posisi paksa sebelumnya */
         position: fixed; /* Gunakan fixed agar menempel di layar HP */
-        top: auto !important;    /* Jangan nempel di atas */
+        top: 25px !important;   /* Jarak dari atas */
         left: 15px !important;   /* Jarak dari kiri */
         right: 15px !important;  /* Jarak dari kanan */
-        bottom: 25px !important; /* Jarak dari bawah */
+        bottom: auto !important; /*  jangan menempel di bawah */
         
         /* Reset Lebar & Transformasi */
         width: auto !important;  /* Lebar menyesuaikan kiri-kanan */
@@ -339,3 +339,4 @@
         bottom: 20px !important;
     }
 }
+
