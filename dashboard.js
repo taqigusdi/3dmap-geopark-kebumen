@@ -35,8 +35,12 @@ window.addEventListener('load', function() {
                     <span>Daya Tarik Wisata</span>
                 </div>
                 <div class="legend-item">
-                    <span style="width: 12px; height: 12px; background-color: #f1c4bf; margin-right: 10px;"></span>
+                    <span style="display:inline-block; width: 14px; height: 14px; background-color: #f1c4bf; margin-right: 10px; vertical-align: middle; border-radius: 3px; border: 1px solid rgba(0,0,0,0.1);"></span>
                     <span>Pariwisata Pedesaan</span>
+                </div>
+                <div class="legend-item">
+                    <span style="width: 12px; height: 3px; background-color: #000000; margin-right: 10px;"></span>
+                    <span>Jalan</span>
                 </div>
             </div>
 
@@ -100,6 +104,7 @@ window.addEventListener('load', function() {
         toggleBtn.style.display = 'none';
     }
 });
+
 
 
 
