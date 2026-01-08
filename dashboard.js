@@ -30,7 +30,6 @@ window.addEventListener('load', function() {
             
             <div class="legend-box"> 
                 <h4 class="legend-title">Legenda Peta</h4>
-            
                 <div class="legend-item">
                     <span style="width: 12px; height: 12px; background: #000000ff; border-radius: 50%; margin-right: 10px;"></span>
                     <span>Daya Tarik Wisata</span>
@@ -72,4 +71,5 @@ window.addEventListener('load', function() {
         toggleBtn.style.display = 'none';
     }
 });
+
 
