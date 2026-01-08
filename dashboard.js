@@ -25,7 +25,7 @@ window.addEventListener('load', function() {
         
         <div class="panel-content-scroll">
             <p class="panel-desc"> 
-            Visualisasi Evaluasi Kinerja Pariwisata Berbasis <strong>Indeks Gabungan 6A Pariwisata</strong>.
+            Visualisasi Hasil Penilaian <strong>Indeks Gabungan 6A Pariwisata dan Pariwisata Berkualitas</strong>.
             </p>
             
             <div class="legend-box"> 
@@ -105,3 +105,4 @@ window.addEventListener('load', function() {
         toggleBtn.style.display = 'none';
     }
 });
+
