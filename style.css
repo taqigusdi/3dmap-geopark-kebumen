@@ -282,61 +282,53 @@
 }
 
 /* ========================================================== */
-/* PERBAIKAN FINAL: TAMPILAN KHUSUS HP (MOBILE RESPONSIVE)    */
+/* VERSI FINAL: PANEL MUNCUL DI ATAS (MOBILE RESPONSIVE)      */
 /* ========================================================== */
 @media only screen and (max-width: 600px) {
     
     /* 1. Posisi Tombol Info (Ikon i) */
     .dashboard-toggle {
-        top: 70px; 
+        top: 70px; /* Di bawah navbar */
         left: 15px;
     }
 
-    /* 2. Posisi Panel Dashboard (MODEL LACI BAWAH) */
+    /* 2. Posisi Panel Dashboard (DI ATAS) */
     .smart-panel {
-        /* Reset semua posisi paksa sebelumnya */
-        position: fixed; /* Gunakan fixed agar menempel di layar HP */
-        top: 25px !important;   /* Jarak dari atas */
-        left: 15px !important;   /* Jarak dari kiri */
-        right: 15px !important;  /* Jarak dari kanan */
-        bottom: auto !important; /*  jangan menempel di bawah */
+        /* Reset posisi */
+        position: fixed; 
         
-        /* Reset Lebar & Transformasi */
-        width: auto !important;  /* Lebar menyesuaikan kiri-kanan */
-        transform: none !important; /* Matikan efek centering paksa */
+        /* ATURAN POSISI ATAS */
+        top: 80px !important;    /* Muncul 80px dari atas (di bawah Navbar) */
+        bottom: auto !important; /* Jangan nempel di bawah */
         
-        /* Styling agar rapi */
-        max-height: 45vh; /* Tinggi maksimal 45% layar */
+        /* Lebar menyesuaikan kiri-kanan */
+        left: 15px !important;   
+        right: 15px !important;  
+        width: auto !important;  
+        transform: none !important; 
+        
+        /* Styling */
+        max-height: 50vh; /* Tinggi maks setengah layar */
         border-radius: 15px;
         padding: 15px;
         z-index: 99999;
+        
+        /* Bayangan supaya terlihat mengambang di atas peta */
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
     }
 
     /* 3. Penyesuaian Font di HP */
-    .panel-header h2 { 
-        font-size: 16px; 
-    }
-    
-    .panel-desc { 
-        display: none; /* Sembunyikan deskripsi panjang agar hemat tempat */
-    }
-    
-    .legend-item span { 
-        font-size: 12px; 
-    }
-    
-    .panel-footer {
-        font-size: 9px;
-        margin-top: 10px;
-    }
+    .panel-header h2 { font-size: 16px; }
+    .panel-desc { display: none; } 
+    .legend-item span { font-size: 12px; }
+    .panel-footer { font-size: 9px; margin-top: 10px; }
 
-    /* 4. Perbaikan Pop-up Data (Jika diklik objek) */
+    /* 4. Perbaikan Pop-up Data (Tetap di bawah agar tidak numpuk) */
     #my-custom-popup {
-        /* Pastikan popup data juga di tengah bawah */
         left: 5% !important;
         width: 90% !important;
         top: auto !important;
-        bottom: 20px !important;
+        bottom: 20px !important; /* Pop-up data tetap enak di bawah */
     }
 }
 
