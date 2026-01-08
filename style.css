@@ -210,4 +210,57 @@
     font-family: sans-serif; pointer-events: auto;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
+
 .navbar-btn:hover { background: #2ecc71; transform: translateY(-2px); }
+
+/* ================================================== */
+/* MEDIA QUERY: KHUSUS TAMPILAN HP (MOBILE)           */
+/* ================================================== */
+@media only screen and (max-width: 600px) {
+    
+    /* 1. Ubah Ukuran & Posisi Panel */
+    .smart-panel {
+        width: auto;          /* Jangan dipaksa 320px lagi */
+        left: 15px;           /* Jarak kiri */
+        right: 15px;          /* Jarak kanan (agar melebar otomatis) */
+        top: 60px;            /* Turunkan ke bawah agar tidak menabrak Navbar */
+        padding: 15px;        /* Padding diperkecil biar hemat tempat */
+        
+        /* Agar tidak memanjang ke bawah menutupi peta */
+        max-height: 35vh;     /* Maksimal tinggi cuma 35% dari layar */
+        overflow-y: auto;     /* Kalau isinya banyak, muncul scrollbar di dalam panel */
+        
+        /* Font size dikecilkan */
+        font-size: 12px;
+    }
+
+    /* 2. Perkecil Judul */
+    .panel-header h2 {
+        font-size: 16px;      /* Judul jadi lebih kecil */
+        margin-bottom: 5px;
+    }
+
+    .panel-header span {
+        font-size: 10px;
+    }
+
+    /* 3. Sembunyikan Deskripsi Panjang (Opsional) */
+    /* Agar panel tidak terlalu penuh, deskripsi paragraf kita sembunyikan di HP */
+    .panel-desc {
+        display: none; 
+    }
+
+    /* 4. Perkecil Legenda */
+    .legend-title {
+        margin-top: 5px;
+        font-size: 12px;
+    }
+    
+    .legend-item {
+        margin-bottom: 4px;
+    }
+    
+    .legend-item span {
+        font-size: 11px;
+    }
+}
