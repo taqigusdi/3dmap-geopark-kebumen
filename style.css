@@ -213,58 +213,6 @@
 }
 .navbar-btn:hover { background: #2ecc71; transform: translateY(-2px); }
 
-/* ================================================== */
-/* MEDIA QUERY: KHUSUS TAMPILAN HP (MOBILE)           */
-/* ================================================== */
-@media only screen and (max-width: 600px) {
-    
-    /* 1. Ubah Ukuran & Posisi Panel */
-    .smart-panel {
-        width: auto;          /* Jangan dipaksa 320px lagi */
-        left: 15px;           /* Jarak kiri */
-        right: 15px;          /* Jarak kanan (agar melebar otomatis) */
-        top: 60px;            /* Turunkan ke bawah agar tidak menabrak Navbar */
-        padding: 15px;        /* Padding diperkecil biar hemat tempat */
-        
-        /* Agar tidak memanjang ke bawah menutupi peta */
-        max-height: 35vh;     /* Maksimal tinggi cuma 35% dari layar */
-        overflow-y: auto;     /* Kalau isinya banyak, muncul scrollbar di dalam panel */
-        
-        /* Font size dikecilkan */
-        font-size: 12px;
-    }
-
-    /* 2. Perkecil Judul */
-    .panel-header h2 {
-        font-size: 16px;      /* Judul jadi lebih kecil */
-        margin-bottom: 5px;
-    }
-
-    .panel-header span {
-        font-size: 10px;
-    }
-
-    /* 3. Sembunyikan Deskripsi Panjang (Opsional) */
-    /* Agar panel tidak terlalu penuh, deskripsi paragraf kita sembunyikan di HP */
-    .panel-desc {
-        display: none; 
-    }
-
-    /* 4. Perkecil Legenda */
-    .legend-title {
-        margin-top: 5px;
-        font-size: 12px;
-    }
-    
-    .legend-item {
-        margin-bottom: 4px;
-    }
-    
-    .legend-item span {
-        font-size: 11px;
-    }
-}
-
 /* --- GAYA TOMBOL DASHBOARD (TOGGLE) --- */
 
 /* 1. Desain Tombol Bulat Mengambang */
@@ -334,18 +282,52 @@
 
 /* --- TAMPILAN KHUSUS HP (MEDIA QUERY UPDATE) --- */
 @media only screen and (max-width: 600px) {
+    
+    /* 1. Posisi Tombol Info (Ikon i) */
     .dashboard-toggle {
-        top: 60px; /* Sesuaikan posisi tombol di HP */
-        left: 10px;
+        top: 70px; /* Di bawah navbar */
+        left: 15px;
     }
 
+    /* 2. Posisi Panel Dashboard (DI ATAS) */
     .smart-panel {
-        /* Di HP panel jadi di tengah */
-        width: 85%;       /* Lebar 85% layar */
-        left: 50%;        /* Trik centering */
-        transform: translateX(-50%); /* Trik centering */
-        top: 15%;         /* Jarak dari atas */
-        max-height: 70vh; /* Jangan terlalu tinggi */
+        /* Gunakan Fixed agar menempel di layar meskipun discroll */
+        position: fixed; 
+        
+        /* ATURAN POSISI ATAS (PENTING) */
+        top: 85px !important;    /* Jarak dari atas (di bawah Navbar) */
+        bottom: auto !important; /* Pastikan tidak nempel ke bawah */
+        
+        /* Lebar menyesuaikan kiri-kanan */
+        left: 15px !important;   
+        right: 15px !important;  
+        width: auto !important;  
+        
+        /* MATIKAN EFEK TENGAH YANG LAMA */
+        transform: none !important; 
+        
+        /* Styling Tambahan */
+        max-height: 50vh; /* Tinggi maks setengah layar */
+        border-radius: 15px;
+        padding: 15px;
+        z-index: 99999;
+        
+        /* Bayangan supaya terlihat mengambang */
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    }
+
+    /* 3. Penyesuaian Font di HP */
+    .panel-header h2 { font-size: 16px; }
+    .panel-desc { display: none; } /* Sembunyikan deskripsi panjang */
+    .legend-item span { font-size: 12px; }
+    .panel-footer { font-size: 9px; margin-top: 10px; }
+
+    /* 4. Perbaikan Pop-up Data (Tetap di bawah agar tidak numpuk dengan dashboard) */
+    #my-custom-popup {
+        left: 5% !important;
+        width: 90% !important;
+        top: auto !important;
+        bottom: 20px !important; /* Pop-up data muncul di bawah */
     }
 }
 
