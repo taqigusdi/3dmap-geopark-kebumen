@@ -39,9 +39,38 @@ window.addEventListener('load', function() {
                     <span>Pariwisata Pedesaan</span>
                 </div>
             </div>
-            
+
+            <div class="legend-box"> 
+                <h4 class="legend-title">Status Quality Tourism</h4>
+                    <div class="legend-item">
+                        <span style="width: 12px; height: 12px; background-color: #2ecc71; border-radius: 2px; margin-right: 10px;"></span>
+                        <span>Sangat Baik</span>
+                    </div>
+
+                    <div class="legend-item">
+                        <span style="width: 12px; height: 12px; background-color: #f1c40f; border-radius: 2px; margin-right: 10px;"></span>
+                        <span>Baik</span>
+                    </div>
+
+                    <div class="legend-item">
+                        <span style="width: 12px; height: 12px; background-color: #e67e22; border-radius: 2px; margin-right: 10px;"></span>
+                        <span>Sedang</span>
+                    </div>
+
+                    <div class="legend-item">
+                        <span style="width: 12px; height: 12px; background-color: #e74c3c; border-radius: 2px; margin-right: 10px;"></span>
+                        <span>Rendah</span>
+                    </div>
+
+                    <div class="legend-item">
+                        <span style="width: 12px; height: 12px; background-color: #9b59b6; border-radius: 2px; margin-right: 10px;"></span>
+                        <span>Sangat Rendah</span>
+                    </div>
+                </div>
+            </div>
+
             <div style="margin-top:15px; font-size:11px; color:#666; text-align:center;">
-                <em>Klik objek pada peta untuk melihat Detail Data & Rekomendasi.</em>
+                <em>Klik objek pada peta untuk melihat Detail.</em>
             </div>
         </div>
     `;
@@ -71,5 +100,6 @@ window.addEventListener('load', function() {
         toggleBtn.style.display = 'none';
     }
 });
+
 
 
