@@ -30,6 +30,7 @@ window.addEventListener('load', function() {
             
             <div class="legend-box"> 
                 <h4 class="legend-title">Legenda Peta</h4>
+            
                 <div class="legend-item">
                     <span style="width: 12px; height: 12px; background: #000000ff; border-radius: 50%; margin-right: 10px;"></span>
                     <span>Daya Tarik Wisata</span>
@@ -43,7 +44,7 @@ window.addEventListener('load', function() {
                     <span>Jalan</span>
                 </div>
             </div>
-
+            
             <div class="legend-box"> 
                 <h4 class="legend-title">Status Quality Tourism</h4>
                     <div class="legend-item">
@@ -74,7 +75,7 @@ window.addEventListener('load', function() {
             </div>
 
             <div style="margin-top:15px; font-size:11px; color:#666; text-align:center;">
-                <em>Klik objek pada peta untuk melihat Detail.</em>
+                <em>Klik objek pada peta untuk melihat detail.</em>
             </div>
         </div>
     `;
@@ -104,7 +105,3 @@ window.addEventListener('load', function() {
         toggleBtn.style.display = 'none';
     }
 });
-
-
-
-
