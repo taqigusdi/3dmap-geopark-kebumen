@@ -3,16 +3,16 @@
 
 // --- 1. DATA TESIS (EDIT DATA DI SINI) ---
 const DESTINATIONS = [
-{ name: "Pantai Kembar", x: -12551.94, y: -12599.71, nilai: "43,35%", kategori: "Sedang", isu: "Abrasi & Sampah Laut", saran: "Pembangunan Breakwater Alami" },
-{ name: "Sagara View of Karangbolong", x: -15818.68, y: -12367.41, nilai: "52,92%", kategori: "Sedang", isu: "Kemacetan Akses Masuk", saran: "Manajemen Kantong Parkir" },
-{ name: "Pantai Menganti", x: -21634.23, y: -13638.54, nilai: "55,29%", kategori: "Sedang", isu: "Daya Dukung Lingkungan", saran: "Pembatasan Kuota Pengunjung" },
-{ name: "Hutan Mangrove Pantai Ayah", x: -24068.14, y: -8033.13, nilai: "40,39%", kategori: "Sedang", isu: "Sedimentasi & Fasilitas", saran: "Revitalisasi Jalur Trekking" },
-{ name: "Kerajinan Pandan KTH Margo Rahayu", x: -7642.84, y: 5652.74, nilai: "42,26%", kategori: "Sedang", isu: "Regenerasi Pengrajin", saran: "Pelatihan & Pemasaran Digital" },
-{ name: "Sanggar Batik Gemeksekti", x: 5500.60, y: -679.29, nilai: "38,69%", kategori: "Rendah", isu: "Keterbatasan Showroom", saran: "Integrasi Paket Wisata Kota" },
-{ name: "Pariwisata Pedesaan Desa Seboro 'Selo Asri'", x: 11348.17, y: 14192.50, nilai: "41,66%", kategori: "Sedang", isu: "Aksesibilitas Jalan Sempit", saran: "Pelebaran Jalan Last Mile" },
-{ name: "Pariwisata Pedesaan Agro Wisata Embung Cangkring", x: 16446.72, y: 15004.87, nilai: "42,48%", kategori: "Sedang", isu: "Minim Atraksi Malam", saran: "Penambahan Lampu & Event" },
-{ name: "Pariwisata Pedesaan Desa Karanggayam", x: -3153.87, y: 5304.59, nilai: "38,77%", kategori: "Rendah", isu: "Fasilitas Sanitasi", saran: "Standarisasi Toilet Wisata" },
-{ name: "Pariwisata Pedesaan Desa Rahayu", x: 17961.64, y: 1588.40, nilai: "41,93%", kategori: "Sedang", isu: "Promosi Belum Optimal", saran: "Branding Desa Wisata Digital" }
+{ name: "Pantai Kembar", x: -12390.62, y: -10281.87, nilai: "43,35%", kategori: "Sedang", isu: "Abrasi & Sampah Laut", saran: "Pembangunan Breakwater Alami" },
+{ name: "Sagara View of Karangbolong", x: -15634.81, y: -10008.37, nilai: "52,92%", kategori: "Sedang", isu: "Kemacetan Akses Masuk", saran: "Manajemen Kantong Parkir" },
+{ name: "Pantai Menganti", x: -21501.73, y: -11325.52, nilai: "55,29%", kategori: "Sedang", isu: "Daya Dukung Lingkungan", saran: "Pembatasan Kuota Pengunjung" },
+{ name: "Hutan Mangrove Pantai Ayah", x: -23884.69, y: -5698.66, nilai: "40,39%", kategori: "Sedang", isu: "Sedimentasi & Fasilitas", saran: "Revitalisasi Jalur Trekking" },
+{ name: "Kerajinan Pandan KTH Margo Rahayu", x: -7496.88, y: 8005.30, nilai: "42,26%", kategori: "Sedang", isu: "Regenerasi Pengrajin", saran: "Pelatihan & Pemasaran Digital" },
+{ name: "Sanggar Batik Gemeksekti", x: 5574.07, y: 1677.00, nilai: "38,69%", kategori: "Rendah", isu: "Keterbatasan Showroom", saran: "Integrasi Paket Wisata Kota" },
+{ name: "Pariwisata Pedesaan Desa Seboro 'Selo Asri'", x: 11237.29, y: 17001.15, nilai: "41,66%", kategori: "Sedang", isu: "Aksesibilitas Jalan Sempit", saran: "Pelebaran Jalan Last Mile" },
+{ name: "Pariwisata Pedesaan Agro Wisata Embung Cangkring", x: 16572.57, y: 17507.11, nilai: "42,48%", kategori: "Sedang", isu: "Minim Atraksi Malam", saran: "Penambahan Lampu & Event" },
+{ name: "Pariwisata Pedesaan Desa Karanggayam", x: -3264.14, y: 8018.13, nilai: "38,77%", kategori: "Rendah", isu: "Fasilitas Sanitasi", saran: "Standarisasi Toilet Wisata" },
+{ name: "Pariwisata Pedesaan Desa Rahayu", x: 18316.36, y: 4365.18, nilai: "41,93%", kategori: "Sedang", isu: "Promosi Belum Optimal", saran: "Branding Desa Wisata Digital" }
 ];
 
 const CLICK_RADIUS = 1000; 
@@ -107,4 +107,5 @@ function initCustomInteractions(app, container) {
         var touch = e.touches[0];
         handleInput(touch.clientX, touch.clientY);
     }, {passive: true});
+
 }
