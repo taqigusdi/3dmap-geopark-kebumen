@@ -48,22 +48,22 @@ window.addEventListener('load', function() {
             <div class="legend-box"> 
                 <h4 class="legend-title">Status Quality Tourism</h4>
                     <div class="legend-item">
-                        <span style="width: 12px; height: 12px; background-color: #2ecc71; border-radius: 2px; margin-right: 10px;"></span>
+                        <span style="width: 12px; height: 12px; background-color: #1f9ae5; border-radius: 2px; margin-right: 10px;"></span>
                         <span>Sangat Baik</span>
                     </div>
 
                     <div class="legend-item">
-                        <span style="width: 12px; height: 12px; background-color: #f1c40f; border-radius: 2px; margin-right: 10px;"></span>
+                        <span style="width: 12px; height: 12px; background-color: #2ecc71; border-radius: 2px; margin-right: 10px;"></span>
                         <span>Baik</span>
                     </div>
 
                     <div class="legend-item">
-                        <span style="width: 12px; height: 12px; background-color: #e67e22; border-radius: 2px; margin-right: 10px;"></span>
+                        <span style="width: 12px; height: 12px; background-color: #f2a134; border-radius: 2px; margin-right: 10px;"></span>
                         <span>Sedang</span>
                     </div>
 
                     <div class="legend-item">
-                        <span style="width: 12px; height: 12px; background-color: #e74c3c; border-radius: 2px; margin-right: 10px;"></span>
+                        <span style="width: 12px; height: 12px; background-color: #e51f1f; border-radius: 2px; margin-right: 10px;"></span>
                         <span>Rendah</span>
                     </div>
 
@@ -105,4 +105,5 @@ window.addEventListener('load', function() {
         toggleBtn.style.display = 'none';
     }
 });
+
 
